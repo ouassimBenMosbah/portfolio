@@ -1,39 +1,44 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import {
-  FormBuilder,
   FormControl,
   FormGroup,
+  ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss'],
+  styleUrl: './contact.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    CommonModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+  ],
 })
-export class ContactComponent {
-  public contactForm: FormGroup;
-
-  public get name() {
-    return this.contactForm.get('name') as FormControl<string>;
-  }
-
-  public get email() {
-    return this.contactForm.get('email') as FormControl<string>;
-  }
-
-  public get message() {
-    return this.contactForm.get('message') as FormControl<string>;
-  }
-
-  constructor(private fb: FormBuilder) {
-    this.contactForm = this.fb.group({
-      name: ['', [Validators.required]],
-      email: ['', [Validators.required, Validators.email]],
-      message: ['', [Validators.required, Validators.minLength(10)]],
-    });
-  }
+export default class ContactComponent {
+  public contactForm = new FormGroup({
+    name: new FormControl('', {
+      nonNullable: true,
+      validators: [Validators.required],
+    }),
+    email: new FormControl('', {
+      nonNullable: true,
+      validators: [Validators.required, Validators.email],
+    }),
+    message: new FormControl('', {
+      nonNullable: true,
+      validators: [Validators.required, Validators.minLength(10)],
+    }),
+  });
 
   public onSubmit(): void {
     if (this.contactForm.valid) {
@@ -43,6 +48,6 @@ export class ContactComponent {
       );
       return;
     }
-    console.log("Le formulaire n'est pas valide");
+    console.log(`Le formulaire n'est pas valide`);
   }
 }

@@ -1,0 +1,14 @@
+<nav
+  *ngIf="activeLink$ | async as activeLink"
+  mat-tab-nav-bar
+  [tabPanel]="tabPanel"
+  class="ui-header-nav"
+>
+  @for (tab of tabs; track tab) {
+  <a mat-tab-link [active]="activeLink === tab.link" [routerLink]="tab.link">
+    {{ tab.label }}
+  </a>
+  }
+</nav>
+
+<mat-tab-nav-panel #tabPanel> </mat-tab-nav-panel>

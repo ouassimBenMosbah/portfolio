@@ -1,38 +1,48 @@
-<div class="contact">
-  <h2>Contactez-moi</h2>
+<div class="ui-contact">
+  <h2>Contact me</h2>
 
-  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-    <div>
-      <label for="name">Nom</label>
-      <input id="name" type="text" formControlName="name" />
-      <div *ngIf="name.invalid && name.touched" class="error">
-        <span *ngIf="name.hasError('required')">Le nom est requis.</span>
-        <span *ngIf="name.hasError('minlength')"
-          >Le nom doit contenir au moins 3 caractères.</span
-        >
-      </div>
-    </div>
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="ui-form-group">
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" type="text" placeholder="John" />
+      @if (contactForm.controls.name.hasError('required')) {
+      <mat-error>Field is <strong>required</strong></mat-error>
+      }
+    </mat-form-field>
 
-    <div>
-      <label for="email">Email</label>
-      <input id="email" type="email" formControlName="email" />
-      <div *ngIf="email.invalid && email.touched" class="error">
-        <span *ngIf="email.hasError('required')">L'email est requis.</span>
-        <span *ngIf="email.hasError('email')">L'email n'est pas valide.</span>
-      </div>
-    </div>
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input
+        matInput
+        formControlName="email"
+        type="email"
+        placeholder="example@example.com"
+      />
+      @if (contactForm.controls.email.hasError('required')) {
+      <mat-error>Field is <strong>required</strong></mat-error>
+      } @if (contactForm.controls.email.hasError('email')) {
+      <mat-error>Email format invalid.</mat-error>
+      }
+    </mat-form-field>
 
-    <div>
-      <label for="message">Message</label>
-      <textarea id="message" formControlName="message"></textarea>
-      <div *ngIf="message.invalid && message.touched" class="error">
-        <span *ngIf="message.hasError('required')">Le message est requis.</span>
-        <span *ngIf="message.hasError('minlength')"
-          >Le message doit contenir au moins 10 caractères.</span
-        >
-      </div>
-    </div>
+    <mat-form-field>
+      <mat-label for="message">Message</mat-label>
+      <textarea matInput formControlName="message"></textarea>
+      @if (contactForm.controls.message.hasError('required')) {
+      <mat-error>Field is <strong>required</strong></mat-error>
+      } @if (contactForm.controls.message.hasError('minlength')) {
+      <mat-error>The message must contain at least 10 characters.</mat-error>
+      }
+    </mat-form-field>
 
-    <button type="submit" [disabled]="contactForm.invalid">Envoyer</button>
+    <button
+      mat-raised-button
+      [disabled]="contactForm.invalid"
+      type="submit"
+      matTooltip="Submit form"
+      aria-label="Button that submit form on click"
+    >
+      Submit
+    </button>
   </form>
 </div>

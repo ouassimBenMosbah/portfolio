@@ -1,12 +1,31 @@
-import { enableProdMode } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-
-import { AppModule } from './app/app.module';
+import {
+  enableProdMode,
+  provideExperimentalZonelessChangeDetection,
+} from '@angular/core';
+import {
+  bootstrapApplication,
+  provideClientHydration,
+  withEventReplay,
+} from '@angular/platform-browser';
+import {
+  provideRouter,
+  withComponentInputBinding,
+  withViewTransitions,
+} from '@angular/router';
+import { routes } from './app/app-routing.module';
+import { AppComponent } from './app/app.component';
 import { environment } from './environments/environment';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.error(err));
+bootstrapApplication(AppComponent, {
+  providers: [
+    provideRouter(routes, withComponentInputBinding(), withViewTransitions()),
+    provideExperimentalZonelessChangeDetection(),
+    provideClientHydration(withEventReplay()),
+    provideAnimationsAsync(),
+  ],
+});

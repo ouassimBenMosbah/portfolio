@@ -1,0 +1,23 @@
+.ui-home-content {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.ui-home-content {
+  .ui-profile-picture,
+  .ui-introduction-section {
+    flex: 1;
+  }
+}
+
+.ui-profile-picture {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.ui-introduction-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

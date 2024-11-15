@@ -1,13 +1,18 @@
-.project-list {
+.ui-project-list {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+  gap: 16px;
 }
 
-.project-card {
-  background-color: #f4f4f4;
-  padding: 20px;
-  border-radius: 8px;
+.ui-card {
+  flex: 1;
+  max-height: 300px;
   width: 300px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.ui-card-content {
+  height: 100%;
+}
+
+.ui-card-footer {
+  padding: 16px;
 }
