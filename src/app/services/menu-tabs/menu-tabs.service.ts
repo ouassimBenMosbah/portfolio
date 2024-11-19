@@ -8,7 +8,7 @@ export class MenuTabsService {
   public buildMenu(): MenuTab[] {
     return [
       this.buildTab('Home', ''),
-      this.buildTab('About', 'about'),
+      this.buildTab('Resume', 'resume'),
       this.buildTab('Projects', 'projects'),
       this.buildTab('Contact', 'contact'),
     ];

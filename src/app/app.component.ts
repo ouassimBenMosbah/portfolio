@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { MenuComponent } from './components/menu/menu.component';
+import { MenuComponent } from './components/presentational/menu/menu.component';
 
 @Component({
   selector: 'app-root',
