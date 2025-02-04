@@ -1,13 +1,13 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { MenuComponent } from './shared/components/menu/menu.component';
+import { MenuComponent } from '../../../shared/components/menu/menu.component';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+  templateUrl: './app-root.component.html',
+  styleUrl: './app-root.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   imports: [RouterModule, MenuComponent],
 })
-export class AppComponent {}
+export class AppRootComponent {}
