@@ -1,19 +1,15 @@
+@use "base/mixins/positions" as positions;
+@use "components/app.component" as app;
+
 :host {
   display: flex;
   flex-direction: column;
   height: 100%;
+  overflow-y: hidden;
 }
 
 .ui-menu-header {
-  background-color: white;
+  height: app.$header-height;
   position: sticky;
   top: 0;
-}
-
-.ui-menu-content {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  padding: 20px 0px;
 }

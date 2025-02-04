@@ -1,0 +1,27 @@
+@use "base/mixins/positions" as positions;
+
+:host {
+  height: 100%;
+}
+
+.ui-contact--heading {
+  padding: var(--spacing-sm) 0;
+  text-align: center;
+}
+
+.ui-contact--sections-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  margin: var(--spacing-xxl) auto 0 auto;
+  max-width: 66%;
+}
+
+.ui-contact--section {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.ui-contact--information-section {
+  padding-top: var(--spacing-md);
+}

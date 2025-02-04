@@ -1,0 +1,64 @@
+<form class="ui-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+  <div class="ui-form--row">
+    <div class="ui-form--form-control">
+      <label for="name">Name</label>
+      <input
+        id="name"
+        formControlName="name"
+        type="text"
+        placeholder="Jean"
+        required
+      />
+      @if (contactForm.controls.name.touched &&
+      contactForm.controls.name.hasError('required')) {
+      <div class="ui-form--error-message">Champ <strong>requis</strong></div>
+      }
+    </div>
+
+    <div class="ui-form--form-control">
+      <label for="email">Email</label>
+      <input
+        id="email"
+        formControlName="email"
+        type="email"
+        placeholder="exemple@exemple.com"
+        required
+      />
+      @if (contactForm.controls.email.touched &&
+      (contactForm.controls.email.hasError('required') ||
+      contactForm.controls.email.hasError('email'))) {
+      <div class="ui-form--error-message">
+        Format d'<strong>email invalide</strong>
+      </div>
+      }
+    </div>
+  </div>
+
+  <div class="ui-form--form-control">
+    <label for="message">Message</label>
+    <textarea
+      id="message"
+      formControlName="message"
+      placeholder="Mon message ..."
+      rows="7"
+      required
+    ></textarea>
+    @if (contactForm.controls.message.touched &&
+    (contactForm.controls.message.hasError('required') ||
+    contactForm.controls.message.hasError('minlength'))) {
+    <div class="ui-form--error-message">
+      Le message doit contenir <strong> au moins 10 caractères </strong>
+    </div>
+    }
+  </div>
+
+  <button
+    type="submit"
+    matTooltip="Submit form"
+    aria-label="Button that submit form on click"
+    class="ui-submit-button"
+    [disabled]="contactForm.invalid || contactForm.pristine"
+  >
+    Envoyer
+  </button>
+</form>

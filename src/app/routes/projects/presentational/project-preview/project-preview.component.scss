@@ -1,0 +1,32 @@
+.ui-project-preview {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  padding: var(--spacing-xl);
+}
+
+.ui-text-container {
+  flex: 0.5;
+  margin-right: var(--spacing-md);
+}
+
+h6 {
+  margin: 0 0 var(--spacing-md);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-normal);
+}
+
+p {
+  font-size: var(--font-size-md);
+  color: #666;
+}
+
+.ui-image-container {
+  flex-shrink: 0;
+}
+
+img {
+  width: 280px;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--box-shadow-sm);
+}

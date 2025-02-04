@@ -1,0 +1,13 @@
+<div class="ui-project-preview">
+  <div class="ui-text-container">
+    <h6>{{ title() }}</h6>
+    <p>{{ description() }}</p>
+    <i>
+      Code source:
+      <a [href]="projectSrc()" target="_blank"> {{ projectSrc() }}</a>
+    </i>
+  </div>
+  <div class="ui-image-container">
+    <img [src]="previewSrc()" [alt]="imgAlt()" />
+  </div>
+</div>

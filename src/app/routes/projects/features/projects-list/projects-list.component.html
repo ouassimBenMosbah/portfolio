@@ -1,0 +1,9 @@
+<div class="ui-projects-list">
+  <app-project-preview
+    *ngFor="let project of projects$ | async"
+    [title]="project.title"
+    [description]="project.description"
+    [projectSrc]="project.codeSrc"
+    [previewSrc]="project.previewSrc"
+  />
+</div>

@@ -16,6 +16,7 @@ import { routes } from './app/app-routing.module';
 import { AppComponent } from './app/app.component';
 import { environment } from './environments/environment';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { provideHttpClient } from '@angular/common/http';
 
 if (environment.production) {
   enableProdMode();
@@ -23,9 +24,10 @@ if (environment.production) {
 
 bootstrapApplication(AppComponent, {
   providers: [
-    provideRouter(routes, withComponentInputBinding(), withViewTransitions()),
-    provideExperimentalZonelessChangeDetection(),
-    provideClientHydration(withEventReplay()),
     provideAnimationsAsync(),
+    provideClientHydration(withEventReplay()),
+    provideExperimentalZonelessChangeDetection(),
+    provideHttpClient(),
+    provideRouter(routes, withComponentInputBinding(), withViewTransitions()),
   ],
 });

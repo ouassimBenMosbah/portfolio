@@ -1,0 +1,17 @@
+.ui-button {
+  $button-radius: 140px;
+  border: var(--border-display) var(--default-theme-font);
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: var(--font-weight-bold);
+  height: $button-radius;
+  transition-property: background-color, transform;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
+  width: $button-radius;
+
+  &:hover {
+    background-color: var(--default-theme-background) !important;
+    transform: rotate(360deg);
+  }
+}

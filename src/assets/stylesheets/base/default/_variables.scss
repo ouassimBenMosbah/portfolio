@@ -1,0 +1,40 @@
+:root {
+  /* Typography */
+  --font-family-base: "Lato", sans-serif;
+  --font-family-secondary: "Poppins", sans-serif;
+  --font-family-heading: "Montserrat", sans-serif;
+
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-md: 1rem; /* 16px */
+  --font-size-lg: 1.25rem; /* 20px */
+  --font-size-xl: 1.5rem; /* 24px */
+
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-bold: 600;
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 64px;
+
+  /* Borders */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 16px;
+  --border-display: solid 1px;
+  --border-hidden: none;
+
+  /* Shadows */
+  --box-shadow-sm: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  --box-shadow-md: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  --box-shadow-lg: 0px 8px 16px rgba(0, 0, 0, 0.1);
+
+  /* Transitions */
+  --transition-duration: 0.4s;
+  --transition-timing-function: ease-in-out;
+}

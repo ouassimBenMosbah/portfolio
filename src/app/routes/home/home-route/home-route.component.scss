@@ -1,0 +1,60 @@
+@use "components/app.component" as app;
+
+:host {
+  height: 100%;
+}
+
+.ui-home {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-xl);
+  height: calc(100% - #{app.$header-height});
+  justify-content: center;
+}
+
+.ui-home--profile-picture-wrapper,
+.ui-home--introduction-section {
+  flex: 1;
+}
+
+.ui-home--profile-picture-wrapper {
+  display: flex;
+  justify-content: end;
+}
+
+.ui-home--profile-picture {
+  $profile-picture-max-radius: 400px;
+  border-radius: 50%;
+  max-width: $profile-picture-max-radius;
+  max-height: $profile-picture-max-radius;
+  object-fit: cover;
+  width: 100%;
+}
+
+.ui-home--introduction-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px var(--spacing-md);
+}
+
+.ui-home--action-buttons-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.ui-home--introduction-section-description {
+  font-weight: var(--font-weight-light);
+}
+
+@media screen and (max-width: 992px) {
+  .ui-home {
+    flex-direction: column;
+  }
+
+  .ui-home--action-buttons-wrapper {
+    justify-content: center;
+  }
+}
