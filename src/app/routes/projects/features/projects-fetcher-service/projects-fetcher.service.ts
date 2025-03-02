@@ -6,6 +6,7 @@ export interface IProject {
   description: string;
   codeSrc: string;
   previewSrc: string;
+  liveDemoSrc?: string;
 }
 
 @Injectable({
@@ -15,16 +16,27 @@ export class ProjectsFetcherService {
   public fetchProjects(): Observable<IProject[]> {
     return of([
       {
-        title: `Projet 1`,
-        description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`,
-        codeSrc: `https://github.com/ouassimBenMosbah`,
+        title: 'Portfolio',
+        description:
+          'Ce projet est le site que vous consultez actuellement. Conçue pour présenter mes projets, compétences et parcours professionnel, il a été développé en Angular et testé en jest.',
+        codeSrc: 'https://github.com/ouassimBenMosbah/portfolio',
         previewSrc: '/assets/images/project1.jpeg',
       },
       {
-        title: `Projet 2`,
-        description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`,
-        codeSrc: `https://github.com/ouassimBenMosbah`,
-        previewSrc: '/assets/images/project2.jpeg',
+        title: 'Self-service bicycles',
+        description: `Self-Service Bicycles est une application web permettant d'afficher en temps réel la disponibilité des vélos et des places dans les stations en libre-service via l'API JCDecaux. Développée avec Angular, elle utilise un serveur proxy pour contourner les restrictions CORS. Ce projet met en avant mes compétences en intégration d'API, en gestion d'état et en développement front-end structuré.`,
+        codeSrc: 'https://github.com/ouassimBenMosbah/self-service-bicycles',
+        previewSrc: '/assets/images/project1.jpeg',
+        liveDemoSrc: 'https://ouassimbenmosbah.github.io/self-service-bicycles',
+      },
+      {
+        title: 'Short reckonings',
+        description:
+          'Short Reckonings est une application web permettant de centraliser des dépenses communes et de simplifier le remboursement entre participants, à la manière de Tricount. Développée avec Angular, Material Design, Jest et Cypress, elle met en avant mes compétences en algorithmie et en développement front-end structuré et testé.',
+        codeSrc: 'https://github.com/ouassimBenMosbah/short-reckonings',
+        previewSrc:
+          'https://raw.githubusercontent.com/ouassimBenMosbah/short-reckonings/master/src/assets/demo.gif',
+        liveDemoSrc: 'https://ouassimbenmosbah.github.io/short-reckonings',
       },
     ]);
   }

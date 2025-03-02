@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -8,7 +9,7 @@ import {
 @Component({
   selector: 'app-project-preview',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './project-preview.component.html',
   styleUrl: './project-preview.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -19,6 +20,8 @@ export class ProjectPreviewComponent {
   public description = input.required<string>();
 
   public projectSrc = input.required<string>();
+
+  public demoSrc = input<string>();
 
   public previewSrc = input.required<string>();
 

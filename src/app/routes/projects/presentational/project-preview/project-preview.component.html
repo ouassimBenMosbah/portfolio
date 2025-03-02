@@ -6,6 +6,13 @@
       Code source:
       <a [href]="projectSrc()" target="_blank"> {{ projectSrc() }}</a>
     </i>
+    <ng-content *ngIf="demoSrc()">
+      <br />
+      <i>
+        Démo live:
+        <a [href]="demoSrc()" target="_blank"> {{ demoSrc() }}</a>
+      </i>
+    </ng-content>
   </div>
   <div class="ui-image-container">
     <img [src]="previewSrc()" [alt]="imgAlt()" />
