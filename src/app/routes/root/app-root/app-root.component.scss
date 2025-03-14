@@ -1,4 +1,3 @@
-@use "base/mixins/positions" as positions;
 @use "components/app.component" as app;
 
 :host {
@@ -10,6 +9,4 @@
 
 .ui-menu-header {
   height: app.$header-height;
-  position: sticky;
-  top: 0;
 }

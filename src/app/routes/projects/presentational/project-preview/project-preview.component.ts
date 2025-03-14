@@ -23,7 +23,7 @@ export class ProjectPreviewComponent {
 
   public demoSrc = input<string>();
 
-  public previewSrc = input.required<string>();
+  public previewSrc = input<string>();
 
   public imgAlt = computed(() => `Screen du projet ${this.title()}`);
 }

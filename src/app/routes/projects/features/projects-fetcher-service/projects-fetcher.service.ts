@@ -5,7 +5,7 @@ export interface IProject {
   title: string;
   description: string;
   codeSrc: string;
-  previewSrc: string;
+  previewSrc?: string;
   liveDemoSrc?: string;
 }
 
@@ -16,17 +16,11 @@ export class ProjectsFetcherService {
   public fetchProjects(): Observable<IProject[]> {
     return of([
       {
-        title: 'Portfolio',
-        description:
-          'Ce projet est le site que vous consultez actuellement. Conçue pour présenter mes projets, compétences et parcours professionnel, il a été développé en Angular et testé en jest.',
-        codeSrc: 'https://github.com/ouassimBenMosbah/portfolio',
-        previewSrc: '/assets/images/project1.jpeg',
-      },
-      {
         title: 'Self-service bicycles',
         description: `Self-Service Bicycles est une application web permettant d'afficher en temps réel la disponibilité des vélos et des places dans les stations en libre-service via l'API JCDecaux. Développée avec Angular, elle utilise un serveur proxy pour contourner les restrictions CORS. Ce projet met en avant mes compétences en intégration d'API, en gestion d'état et en développement front-end structuré.`,
         codeSrc: 'https://github.com/ouassimBenMosbah/self-service-bicycles',
-        previewSrc: '/assets/images/project1.jpeg',
+        previewSrc:
+          'https://github.com/ouassimBenMosbah/self-service-bicycles/raw/master/src/assets/images/demo.gif',
         liveDemoSrc: 'https://ouassimbenmosbah.github.io/self-service-bicycles',
       },
       {
@@ -37,6 +31,12 @@ export class ProjectsFetcherService {
         previewSrc:
           'https://raw.githubusercontent.com/ouassimBenMosbah/short-reckonings/master/src/assets/demo.gif',
         liveDemoSrc: 'https://ouassimbenmosbah.github.io/short-reckonings',
+      },
+      {
+        title: 'Portfolio',
+        description:
+          'Ce projet est le site que vous consultez actuellement. Conçue pour présenter mes projets, compétences et parcours professionnel, il a été développé en Angular et testé en jest.',
+        codeSrc: 'https://github.com/ouassimBenMosbah/portfolio',
       },
     ]);
   }

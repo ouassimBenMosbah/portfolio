@@ -14,7 +14,12 @@
       </i>
     </ng-content>
   </div>
-  <div class="ui-image-container">
-    <img [src]="previewSrc()" [alt]="imgAlt()" />
+  <div class="ui-project-demo-container">
+    <img
+      *ngIf="previewSrc()"
+      class="ui-project-demo"
+      [src]="previewSrc()"
+      [alt]="imgAlt()"
+    />
   </div>
 </div>
