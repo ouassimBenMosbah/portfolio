@@ -1,0 +1,15 @@
+@import "base/index";
+@import "components/index";
+@import "themes/default/index";
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: var(--default-theme-background);
+  color: var(--default-theme-font);
+  font-family: var(--font-family-base);
+  margin: 0;
+}

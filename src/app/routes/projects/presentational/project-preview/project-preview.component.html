@@ -1,0 +1,25 @@
+<div class="ui-project-preview">
+  <div class="ui-text-container">
+    <h6>{{ title() }}</h6>
+    <p>{{ description() }}</p>
+    <i>
+      Code source:
+      <a [href]="projectSrc()" target="_blank"> {{ projectSrc() }}</a>
+    </i>
+    <ng-content *ngIf="demoSrc()">
+      <br />
+      <i>
+        Démo live:
+        <a [href]="demoSrc()" target="_blank"> {{ demoSrc() }}</a>
+      </i>
+    </ng-content>
+  </div>
+  <div class="ui-project-demo-container">
+    <img
+      *ngIf="previewSrc()"
+      class="ui-project-demo"
+      [src]="previewSrc()"
+      [alt]="imgAlt()"
+    />
+  </div>
+</div>

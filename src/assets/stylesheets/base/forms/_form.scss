@@ -1,0 +1,22 @@
+button[type="submit"] {
+  cursor: pointer;
+}
+
+button[type="submit"][disabled] {
+  cursor: not-allowed;
+}
+
+label:has(+ input:required):after,
+label:has(+ textarea:required):after {
+  content: " *";
+}
+
+textarea,
+input {
+  border: var(--border-hidden);
+  padding: var(--spacing-xs);
+}
+
+textarea {
+  resize: none;
+}

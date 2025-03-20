@@ -1,0 +1,15 @@
+@use "components/app.component" as app;
+
+:host {
+  height: calc(100% - #{app.$header-height});
+}
+
+.ui-projects {
+  height: 100%;
+  overflow: auto;
+}
+
+h2 {
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+}

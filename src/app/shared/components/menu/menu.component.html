@@ -1,0 +1,20 @@
+<div class="ui-menu">
+  <span class="ui-menu--title">
+    <a [routerLink]="homeTab().link" class="ui-unstyled-link">
+      <b>{{ name }}</b> &#160; {{ job }}
+    </a>
+  </span>
+
+  <nav>
+    <ul class="ui-menu--nav-list">
+      <li *ngFor="let tab of tabs" class="ui-menu--list-item">
+        <a
+          [routerLink]="tab.link"
+          class="ui-menu--list-item-link ui-unstyled-link"
+        >
+          {{ tab.label }}
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>

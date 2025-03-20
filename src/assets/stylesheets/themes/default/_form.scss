@@ -1,0 +1,4 @@
+label:has(+ input:required):after,
+label:has(+ textarea:required):after {
+  color: var(--default-theme-error-color);
+}

@@ -1,0 +1,41 @@
+<div class="ui-home">
+  <div class="ui-home--profile-picture-wrapper">
+    <img
+      class="ui-home--profile-picture"
+      src="/assets/images/profile-picture.jpeg"
+      alt="My profile picture"
+    />
+  </div>
+  <div class="ui-home--introduction-section">
+    <h1 class="ui-heading-1">Hello</h1>
+    <div>
+      <h2 class="ui-heading-6">Je suis Ouassim BEN MOSBAH</h2>
+      <p class="ui-home--introduction-section-description">
+        Développeur front spécialisé en Angular, je dispose d'une solide
+        expertise dans la création d'applications robustes et performantes.
+      </p>
+      <div class="ui-home--action-buttons-wrapper">
+        <app-redirect-button
+          url="/resume"
+          backgroundColor="var(--default-theme-primary-color)"
+        >
+          CV
+        </app-redirect-button>
+
+        <app-redirect-button
+          url="/projects"
+          backgroundColor="var(--default-theme-secondary-color)"
+        >
+          Projets
+        </app-redirect-button>
+
+        <app-redirect-button
+          url="/contact"
+          backgroundColor="var(--default-theme-info-color)"
+        >
+          Contact
+        </app-redirect-button>
+      </div>
+    </div>
+  </div>
+</div>
