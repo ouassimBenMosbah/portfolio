@@ -1,0 +1,60 @@
+form.ui-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.ui-form--row {
+  display: flex;
+  gap: var(--spacing-lg);
+}
+
+.ui-form--form-control {
+  display: flex;
+  flex-direction: column;
+
+  .ui-form--error-message {
+    color: var(--default-theme-error-color);
+    font-size: var(--font-size-xs);
+    margin-top: var(--spacing-xs);
+  }
+
+  label {
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  input,
+  textarea {
+    border: none;
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-sm);
+    padding: var(--spacing-sm);
+  }
+
+  input.ng-invalid.ng-touched,
+  textarea.ng-invalid.ng-touched {
+    border-color: var(--default-theme-error-color);
+  }
+}
+
+.ui-submit-button {
+  align-self: flex-start;
+  background-color: var(--default-theme-primary-color);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  transition: background-color var(--transition-duration);
+
+  &[disabled] {
+    background-color: unset;
+  }
+
+  &:hover {
+    background-color: var(--default-theme-white);
+  }
+}
+
+label:has(+ input:required):after,
+label:has(+ textarea:required):after {
+  color: var(--default-theme-error-color);
+  content: " *";
+}

@@ -1,0 +1,12 @@
+@use "components/app.component" as app;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: hidden;
+}
+
+.ui-menu-header {
+  height: app.$header-height;
+}

@@ -1,0 +1,34 @@
+.ui-menu {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 var(--spacing-xl);
+}
+
+.ui-menu--title {
+  margin: auto 0;
+}
+
+.ui-menu--nav-list {
+  display: flex;
+  gap: var(--spacing-md);
+  line-height: 2rem;
+  list-style: none;
+}
+
+.ui-menu--list-item:not(:first-child) {
+  border-left: var(--border-display) var(--default-theme-font);
+  padding-left: var(--spacing-lg);
+}
+
+a.ui-unstyled-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+a.ui-menu--list-item-link {
+  transition: color var(--transition-duration);
+
+  &:hover {
+    color: var(--default-theme-primary-color);
+  }
+}

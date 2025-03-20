@@ -1,0 +1,34 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-bold);
+  margin: 0;
+}
+
+.ui-heading-1 {
+  font-size: 5rem;
+}
+
+.ui-heading-2 {
+  font-size: 4rem;
+}
+
+.ui-heading-3 {
+  font-size: 3rem;
+}
+
+.ui-heading-4 {
+  font-size: 2rem;
+}
+
+.ui-heading-5 {
+  font-size: 1.5rem;
+}
+
+.ui-heading-6 {
+  font-size: 1rem;
+}

@@ -1,0 +1,10 @@
+<h2 class="ui-heading-4 ui-contact--heading">Contactez-moi</h2>
+<div class="ui-contact--sections-wrapper">
+  <app-contact-information
+    class="ui-contact--section ui-contact--information-section"
+  ></app-contact-information>
+  <app-contact-form
+    class="ui-contact--section"
+    (formSubmit)="onSubmit($event)"
+  ></app-contact-form>
+</div>
