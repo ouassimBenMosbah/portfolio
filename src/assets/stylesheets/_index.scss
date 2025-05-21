@@ -8,8 +8,30 @@ body {
 }
 
 body {
-  background-color: var(--default-theme-background);
+  background: linear-gradient(
+    -45deg,
+    var(--default-theme-background-max-gradient),
+    var(--default-theme-background),
+    var(--default-theme-background-max-gradient)
+  );
   color: var(--default-theme-font);
   font-family: var(--font-family-base);
   margin: 0;
+}
+
+body {
+  background-size: 300% 300%;
+  animation: gradientBG 6s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

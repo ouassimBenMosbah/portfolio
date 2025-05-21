@@ -8,7 +8,7 @@
   align-items: center;
   display: flex;
   flex-direction: row;
-  gap: var(--spacing-xl);
+  gap: var(--spacing-xxl);
   height: calc(100% - #{app.$header-height});
   justify-content: center;
 }
@@ -42,10 +42,12 @@
 .ui-home--action-buttons-wrapper {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: var(--spacing-xl);
+  padding-top: var(--spacing-lg);
 }
 
 .ui-home--introduction-section-description {
+  font-size: var(--font-size-lg);
   font-weight: var(--font-weight-light);
 }
 
