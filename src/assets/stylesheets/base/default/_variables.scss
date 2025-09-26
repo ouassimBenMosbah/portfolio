@@ -1,3 +1,9 @@
+/* Breakpoints */
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
 :root {
   /* Typography */
   --font-family-base: "Lato", sans-serif;
@@ -37,4 +43,10 @@
   /* Transitions */
   --transition-duration: 0.4s;
   --transition-timing-function: ease-in-out;
+
+  /* Breakpoints */
+  --breakpoint-sm: #{$breakpoint-sm}; /* Small - phones landscape */
+  --breakpoint-md: #{$breakpoint-md}; /* Medium - tablets portrait */
+  --breakpoint-lg: #{$breakpoint-lg}; /* Large - tablets landscape/small laptops */
+  --breakpoint-xl: #{$breakpoint-xl}; /* Extra large - desktops */
 }

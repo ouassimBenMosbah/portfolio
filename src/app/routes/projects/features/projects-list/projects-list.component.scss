@@ -1,6 +1,14 @@
+@use "index" as variables;
+
 .ui-projects-list {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-md);
   padding: var(--spacing-lg);
+}
+
+@media screen and (max-width: variables.$breakpoint-lg) {
+  .ui-projects-list {
+    padding-top: 0;
+  }
 }

@@ -1,4 +1,5 @@
 @use "components/app.component" as app;
+@use "index" as variables;
 
 :host {
   height: 100%;
@@ -51,12 +52,22 @@
   font-weight: var(--font-weight-light);
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: variables.$breakpoint-lg) {
   .ui-home {
-    flex-direction: column;
+    display: block;
+    overflow: auto;
+  }
+
+  .ui-home--profile-picture-wrapper {
+    padding: var(--spacing-lg) 0;
   }
 
   .ui-home--action-buttons-wrapper {
+    justify-content: center;
+  }
+
+  .ui-heading-1__mobile {
+    display: flex;
     justify-content: center;
   }
 }
