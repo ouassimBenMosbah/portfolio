@@ -1,3 +1,5 @@
+@use "index" as variables;
+
 .ui-project-preview {
   display: flex;
   align-items: flex-start;
@@ -30,4 +32,51 @@ p {
   width: 100%;
   border-radius: var(--border-radius-md);
   box-shadow: var(--box-shadow-sm);
+}
+
+.ui-project-badges {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin: var(--spacing-md) 0;
+}
+
+.badge {
+  display: inline-block;
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  text-decoration: none;
+  transition: box-shadow 0.18s, transform 0.18s, filter 0.18s;
+  color: var(--default-theme-font);
+  box-shadow: var(--box-shadow-xs);
+
+  &:hover,
+  &:focus {
+    box-shadow: var(--box-shadow-lg);
+    transform: scale(1.06);
+    filter: brightness(1.085);
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.badge-src {
+  background: var(--default-theme-secondary-color);
+  color: var(--default-theme-background);
+}
+
+.badge-demo {
+  background: var(--default-theme-accent-color);
+  color: var(--default-theme-font);
+}
+
+@media screen and (max-width: variables.$breakpoint-lg) {
+  .ui-project-preview {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
 }

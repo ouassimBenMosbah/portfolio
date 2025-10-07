@@ -1,4 +1,5 @@
 @use "components/app.component" as app;
+@use "index" as variables;
 
 :host {
   height: 100%;
@@ -25,11 +26,20 @@
 
 .ui-home--profile-picture {
   $profile-picture-max-radius: 400px;
+  border: var(--spacing-sm) solid var(--default-theme-primary-color);
   border-radius: 50%;
+  box-shadow: var(--box-shadow-md);
   max-width: $profile-picture-max-radius;
   max-height: $profile-picture-max-radius;
   object-fit: cover;
   width: 100%;
+
+  transition-property: box-shadow, transform;
+  transition-duration: var(--standard-transition-duration);
+
+  &:hover {
+    transform: scale(1.025);
+  }
 }
 
 .ui-home--introduction-section {
@@ -51,12 +61,22 @@
   font-weight: var(--font-weight-light);
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: variables.$breakpoint-lg) {
   .ui-home {
-    flex-direction: column;
+    display: block;
+    overflow: auto;
+  }
+
+  .ui-home--profile-picture-wrapper {
+    padding: var(--spacing-lg) 0;
   }
 
   .ui-home--action-buttons-wrapper {
+    justify-content: center;
+  }
+
+  .ui-heading-1__mobile {
+    display: flex;
     justify-content: center;
   }
 }

@@ -7,8 +7,8 @@
   font-weight: var(--font-weight-bold);
   height: $button-radius;
   transition-property: background-color, transform;
-  transition-duration: var(--transition-duration);
-  transition-timing-function: var(--transition-timing-function);
+  transition-duration: var(--standard-transition-duration);
+  transition-timing-function: var(--standard-transition-timing-function);
   width: $button-radius;
 
   &:hover {

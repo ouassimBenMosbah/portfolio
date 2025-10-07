@@ -10,3 +10,12 @@
 .ui-contact--call-to-action-msg {
   font-size: var(--font-size-lg);
 }
+
+.ui-heading-6 {
+  padding-top: var(--spacing-md);
+}
+
+.contact-info {
+  border-left: 6px solid var(--default-theme-primary-color);
+  padding-left: 1.3em;
+}
