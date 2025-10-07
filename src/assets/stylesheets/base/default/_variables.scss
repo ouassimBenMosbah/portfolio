@@ -41,8 +41,8 @@ $breakpoint-xl: 1200px;
   --box-shadow-lg: 0px 8px 16px rgba(0, 0, 0, 0.1);
 
   /* Transitions */
-  --transition-duration: 0.4s;
-  --transition-timing-function: ease-in-out;
+  --standard-transition-duration: 0.4s;
+  --standard-transition-timing-function: ease-in-out;
 
   /* Breakpoints */
   --breakpoint-sm: #{$breakpoint-sm}; /* Small - phones landscape */

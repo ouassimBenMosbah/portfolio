@@ -36,20 +36,35 @@ form.ui-form {
   textarea.ng-invalid.ng-touched {
     border-color: var(--default-theme-error-color);
   }
+
+  input:focus,
+  textarea:focus {
+    outline: none;
+    box-shadow: 0 2px 8px 0 rgba(228, 179, 99, 0.16);
+    border: 1px solid var(--default-theme-primary-color);
+    transition: box-shadow 0.1s, border-color 0.1s;
+  }
 }
 
 .ui-submit-button {
   align-self: flex-start;
   background-color: var(--default-theme-primary-color);
   padding: var(--spacing-sm) var(--spacing-lg);
-  transition: background-color var(--transition-duration);
+  transition: background-color var(--standard-transition-duration);
 
   &[disabled] {
     background-color: unset;
   }
 
   &:hover {
-    background-color: var(--default-theme-white);
+    background-color: var(--default-theme-background);
+
+    &:not([disabled]) {
+      transform: scale(1.05);
+      box-shadow: 0 2px 12px 0 rgba(228, 179, 99, 0.18);
+      background-color: var(--default-theme-primary-color);
+      color: #fff;
+    }
   }
 }
 
@@ -57,4 +72,39 @@ label:has(+ input:required):after,
 label:has(+ textarea:required):after {
   color: var(--default-theme-error-color);
   content: " *";
+}
+
+.ui-submit-button {
+  align-items: center;
+  background-color: var(--default-theme-primary-color);
+  border-radius: 99px;
+  border: none;
+  box-shadow: 0 2px 14px 0 rgba(228, 179, 99, 0.14);
+  color: var(--default-theme-background);
+  display: flex;
+  font-size: 1.09em;
+  font-weight: 700;
+  gap: 0.8em;
+  margin-top: 1em;
+  padding: 0.9em 2.5em;
+  transition-duration: var(--standard-transition-duration);
+  transition-property: background, box-shadow, color, transform;
+
+  &:hover:not([disabled]),
+  &:focus-visible:not([disabled]) {
+    // background-color: var(--default-theme-secondary-color);
+    color: var(--default-theme-background);
+    box-shadow: 0 6px 24px 0 rgba(217, 93, 93, 0.13);
+    transform: scale(1.045);
+  }
+  &:active:not([disabled]) {
+    transform: scale(0.97);
+    box-shadow: 0 1px 7px 0 rgba(217, 93, 93, 0.11);
+  }
+  &[disabled] {
+    background: #eee3d1;
+    color: #cabfa4;
+    box-shadow: none;
+    cursor: not-allowed;
+  }
 }

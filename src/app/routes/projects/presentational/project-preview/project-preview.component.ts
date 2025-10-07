@@ -26,4 +26,8 @@ export class ProjectPreviewComponent {
   public previewSrc = input<string>();
 
   public imgAlt = computed(() => `Screen du projet ${this.title()}`);
+
+  public blurTarget(event: MouseEvent): void {
+    (event.target as HTMLElement).blur();
+  }
 }

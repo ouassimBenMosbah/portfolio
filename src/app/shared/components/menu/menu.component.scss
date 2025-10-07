@@ -28,7 +28,7 @@ a.ui-unstyled-link {
 }
 
 a.ui-menu--list-item-link {
-  transition: color var(--transition-duration);
+  transition: color var(--standard-transition-duration);
 
   &:hover {
     color: var(--default-theme-primary-color);
