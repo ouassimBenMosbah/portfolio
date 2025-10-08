@@ -82,11 +82,11 @@ label:has(+ textarea:required):after {
   box-shadow: 0 2px 14px 0 rgba(228, 179, 99, 0.14);
   color: var(--default-theme-background);
   display: flex;
-  font-size: 1.09em;
-  font-weight: 700;
-  gap: 0.8em;
-  margin-top: 1em;
-  padding: 0.9em 2.5em;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-md) var(--spacing-xl);
   transition-duration: var(--standard-transition-duration);
   transition-property: background, box-shadow, color, transform;
 

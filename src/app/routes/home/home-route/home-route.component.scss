@@ -29,13 +29,13 @@
   border: var(--spacing-sm) solid var(--default-theme-primary-color);
   border-radius: 50%;
   box-shadow: var(--box-shadow-md);
+  box-sizing: border-box;
   max-width: $profile-picture-max-radius;
   max-height: $profile-picture-max-radius;
   object-fit: cover;
-  width: 100%;
-
   transition-property: box-shadow, transform;
   transition-duration: var(--standard-transition-duration);
+  width: 100%;
 
   &:hover {
     transform: scale(1.025);
