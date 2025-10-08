@@ -11,4 +11,11 @@
   .ui-projects-list {
     padding-top: 0;
   }
+
+  .ui-projects-list app-project-preview:not(:last-child)::after {
+    content: "";
+    display: block;
+    border-bottom: 2px solid var(--default-theme-secondary-color);
+    margin: var(--spacing-lg) 0;
+  }
 }
